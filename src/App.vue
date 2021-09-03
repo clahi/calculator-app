@@ -1,26 +1,45 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="container flex">
+      <div class="main my-auto">
+        <the-header></the-header>
+        <output-view></output-view>
+      </div>
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TheHeader from './components/TheHeader.vue'
+import OutputView from './components/calculator/OutputView.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    TheHeader,
+    OutputView
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+
+body {
+  background-color: hsl(222, 26%, 31%);
 }
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main {
+  width: 90%;
+}
+
+@media (min-width: 768px) {
+  .main {
+    width: 50%;
+  }
+}
+
 </style>
